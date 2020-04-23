@@ -20,11 +20,8 @@ zephyr_library_sources(
   arm_biquad_cascade_df2T_init_f64.c
   arm_biquad_cascade_stereo_df2T_f32.c
   arm_biquad_cascade_stereo_df2T_init_f32.c
-  arm_conv_f32.c
   arm_conv_fast_opt_q15.c
   arm_conv_fast_q15.c
-  arm_conv_fast_q31.c
-  arm_conv_opt_q15.c
   arm_conv_opt_q7.c
   arm_conv_partial_f32.c
   arm_conv_partial_fast_opt_q15.c
@@ -35,17 +32,12 @@ zephyr_library_sources(
   arm_conv_partial_q15.c
   arm_conv_partial_q31.c
   arm_conv_partial_q7.c
-  arm_conv_q15.c
-  arm_conv_q31.c
   arm_conv_q7.c
-  arm_correlate_f32.c
   arm_correlate_fast_opt_q15.c
   arm_correlate_fast_q15.c
   arm_correlate_fast_q31.c
   arm_correlate_opt_q15.c
   arm_correlate_opt_q7.c
-  arm_correlate_q15.c
-  arm_correlate_q31.c
   arm_correlate_q7.c
   arm_fir_decimate_f32.c
   arm_fir_decimate_fast_q15.c
@@ -55,12 +47,8 @@ zephyr_library_sources(
   arm_fir_decimate_init_q31.c
   arm_fir_decimate_q15.c
   arm_fir_decimate_q31.c
-  arm_fir_f32.c
   arm_fir_fast_q15.c
   arm_fir_fast_q31.c
-  arm_fir_init_f32.c
-  arm_fir_init_q15.c
-  arm_fir_init_q31.c
   arm_fir_init_q7.c
   arm_fir_interpolate_f32.c
   arm_fir_interpolate_init_f32.c
@@ -74,8 +62,6 @@ zephyr_library_sources(
   arm_fir_lattice_init_q31.c
   arm_fir_lattice_q15.c
   arm_fir_lattice_q31.c
-  arm_fir_q15.c
-  arm_fir_q31.c
   arm_fir_q7.c
   arm_fir_sparse_f32.c
   arm_fir_sparse_init_f32.c
@@ -101,6 +87,23 @@ zephyr_library_sources(
   arm_lms_norm_q31.c
   arm_lms_q15.c
   arm_lms_q31.c
+  )
+
+zephyr_library_sources_ifndef(CONFIG_CMSIS_DSP_POWERQUAD
+  arm_conv_f32.c
+  arm_conv_fast_q31.c
+  arm_conv_opt_q15.c
+  arm_conv_q15.c
+  arm_conv_q31.c
+  arm_correlate_f32.c
+  arm_correlate_q15.c
+  arm_correlate_q31.c
+  arm_fir_f32.c
+  arm_fir_init_f32.c
+  arm_fir_init_q15.c
+  arm_fir_init_q31.c
+  arm_fir_q15.c
+  arm_fir_q31.c
   )
 
 zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_TABLES_ARM_LMS_NORM_Q31 arm_lms_norm_init_q31.c)
